@@ -81,7 +81,6 @@
       filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .25));
     }
 
-    /* ===== 300x250 ===== */
     .banner-300 {
       width: 300px;
       height: 250px;
@@ -107,8 +106,6 @@
 </head>
 
 <body>
-
-  <!-- 300x250 -->
   <div class="banner banner-300">
     <div class="banner-content">
       <h1>PERFORMA NYATA.<br><span>TANPA KOMPROMI.</span></h1>
