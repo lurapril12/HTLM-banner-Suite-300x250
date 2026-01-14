@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptop Promo Banners</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* ===== COMMON ===== */
+    .banner {
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      border-radius: 16px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+    }
+
+    .banner-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .banner-content h1 {
+      font-weight: 800;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    .banner-content h1 span {
+      color: #b4b9ff;
+    }
+
+    .banner-content p {
+      color: #d1d1d1;
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    .cta {
+      background: #7c3aed;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 16px;
+      opacity: 0;
+      transform: translateY(-30px);
+      white-space: nowrap;
+    }
+
+    .banner-image img {
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transform: scale(.95);
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .25));
+    }
+
+    /* ===== 300x250 ===== */
+    .banner-300 {
+      width: 300px;
+      height: 250px;
+      flex-direction: column;
+    }
+
+    .banner-300 .banner-content {
+      padding: 20px;
+    }
+
+    .banner-300 h1 {
+      font-size: 20px
+    }
+
+    .banner-300 .banner-image img {
+      max-width: 170px;
+      max-height: 130px;
+      object-fit: cover;
+      align-items: center;
+      margin-left: 20%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 300x250 -->
+  <div class="banner banner-300">
+    <div class="banner-content">
+      <h1>PERFORMA NYATA.<br><span>TANPA KOMPROMI.</span></h1>
+      <p>Laptop modern untuk kerja & gaming</p>
+      <a class="cta" href="#">LIHAT PRODUK</a>
+    </div>
+    <div class="banner-image">
+      <img
+        src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,f_auto,q_auto:best,w_720,ar_814:458/v1562892726/pejr0ljzmx3qeu7bdhwq.jpg">
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    document.querySelectorAll('.banner').forEach(banner => {
+      const tl = gsap.timeline();
+      tl.to(banner.querySelectorAll('h1, p, .cta'), {
+        opacity: 1,
+        y: 0,
+        duration: .6,
+        stagger: .15,
+        ease: "power2.out"
+      })
+        .to(banner.querySelector('img'), {
+          opacity: 1,
+          scale: 1,
+          duration: .8,
+          ease: "power2.out"
+        }, "-=0.4");
+    });
+  </script>
+
+</body>
+
+</html>
